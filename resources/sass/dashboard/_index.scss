@@ -1,0 +1,22 @@
+#dashboard {
+    font-family: "Nunito", sans-serif;
+
+    @import "header";
+    @import "nav";
+
+    .dashboard-container {
+        padding: 10px 10px 42.4px;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        @media (min-width: 768px) {
+            padding-left: 276px;
+            max-width: none;
+        }
+
+        @import 'task/index';
+
+    }
+}
+

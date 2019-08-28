@@ -1,0 +1,80 @@
+
+
+#tasklist {
+   // background: red;
+   padding: 5px;
+
+   .task {
+      // background: blue;
+      margin-top: 20px;
+      border-radius: 5px;
+      padding: 5px;
+      box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.1);
+      position: relative;
+      background: #fff;
+      .status-bouble {
+         position: absolute;
+         width: 25px;
+         height: 25px;
+         // background: #b0b0b0;
+         border-radius: 50%;
+         left: 15px;
+         top: 50%;
+         transform: translate(0%, -50%);
+         box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2);
+         &.id-0 {
+            // waiting in line
+            background: #f96969;
+         }
+
+         &.id-1 {
+            // examining
+            background: #8383f7;
+         }
+
+         &.id-2 {
+            // waiting for parts
+            background: #fbbe4d;
+         }
+
+         &.id-3 {
+            // being fixed
+            background: #b0b0b0;
+         }
+
+         &.id-10 {
+            // done
+            background: #76b972;
+         }
+      }
+      // .status {
+      //    display: inline-block;
+      //    width: 50px;
+      // }
+      .info {
+         display: inline-block;
+         padding: 5px 120px 5px 50px;
+         // .device {
+
+         // }
+         // .description {
+            
+         // }
+      }
+      .assigned {
+         position: absolute;
+         right: 10px;
+         top: 50%;
+         transform: translate(0%, -50%);
+         text-align: center;
+         i {
+            display: block;
+            font-size: 52px;
+         }
+         span {
+            display: block;
+         }
+      }
+      
+   }
+}

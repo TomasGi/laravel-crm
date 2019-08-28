@@ -1,0 +1,87 @@
+Name: Fix24
+
+App that helps business owners to control their repair service flow
+
+Authentication/roles:
+---------------------------------------------------------------------
+laravel->auth
+administrator > worker > anonymous
+
+roles/permisions:
+
+admin:
+-create-manager
+
+    manager:
+    -create-worker
+
+        worker:
+
+
+
+
+administrator:
+- can create/edit workers
+- can assign workers to groups (example workers work in diff locations, etc.)
+- can assign workers to tasks
+- can create/edit tasks
+- can update self info
+
+worker:
+- can create/edit tasks
+- can assign self to task
+- can update self info
+
+anonymous:
+- can see task status
+
+---------------------------------------------------------------------
+Database:
+---------------------------------------------------------------------
+users:
+laravel->auth + role
+
+groups
+id | name
+
+user_group
+id | user_id | group_id
+
+tasks
+id(generated) | device | description | status
+
+status 0 - waiting in line 
+status 1 - examining 
+status 2 - waiting for parts 
+status 3 - being fixed
+status 10 - done 
+
+status_task
+task_id | status(text)
+
+task_worker
+id | worker_id | task_id
+
+client
+id | first_name | last_name | address(nullable) | phone | email(nullable)
+
+task_client
+id | client_id | task_id
+
+---------------------------------------------------------------------
+Work flow
+---------------------------------------------------------------------
+Create login system
+Assign roles
+Only admin can create new workers and assign to groups
+
+Task system:
+create/edit task
+update task status
+random task code generation
+check task status on main page
+
+Ideas:
+custom task status(custom color, name, etc.)
+
+
